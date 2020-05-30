@@ -7,6 +7,7 @@
 <meta name="Description" content="Enter your description here"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Chelsea+Market&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="app.css">
 <title>RGB color game</title>
 </head>
@@ -15,28 +16,42 @@
     <section id="header" class="container-fluid text-center py-3 px-0"> 
         <h1>The Great</h1>
         <h2 id="rgbValue">RGB(23,56,34)</h2>
-        <h1>Game</h1>
+        <h1>Color Game</h1>
     </section>
 
     <section id="nav" class="text-center" >
-        <div class="row justify-content-around">
-            <button id="newColor" class="btn btn-info">New Colors</button>
-            <button class="btn btn-warning">EASY</button>
-            <button class="btn btn-danger">HARD</button>
+        <div class="row">
+
+            <div class="col-4">
+                <button id="newColor" class="btn btn-outline-info">New Colors</button>
+            </div>
+
+            <div class="col-4">
+                <p id="msg" class="mb-0"></p>
+            </div>
+
+            <div class="col-2 d-flex justify-content-end px-1">
+                <button  id="easy" class="btn btn-warning">EASY</button>
+            </div>
+
+            <div class="col-2 d-flex justify-content-start px-1">
+                <button  id="hard" class="btn btn-danger">HARD</button>
+            </div>
+
         </div>
         
     </section>
 
     <section id="boxes" class="container">
-        <div class="row pt-3">
-            <div  class="col-md-4"><button class="btn box" >1</button> </div>
-            <div  class="col-md-4"><button class="btn box">2</button>  </div>
-            <div  class="col-md-4"><button class="btn box">3</button> </div>
+        <div class="row pt-4">
+            <div  class="col-4"><button class="btn box" ></button> </div>
+            <div  class="col-4"><button class="btn box"></button>  </div>
+            <div  class="col-4"><button class="btn box"></button> </div>
         </div>
-        <div class="row pt-3">
-            <div  class="col-md-4"><button class="btn box" >1</button> </div>
-            <div  class="col-md-4"><button class="btn box">2</button>  </div>
-            <div  class="col-md-4"><button class="btn box">3</button> </div>
+        <div id="hardLevel" class="row pt-3">
+            <div  class="col-4"><button class="btn box " ></button> </div>
+            <div  class="col-4"><button class="btn box"></button>  </div>
+            <div  class="col-4"><button class="btn box"></button> </div>
         </div>
     </section>
 
@@ -44,6 +59,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
-<script src="script.js"></script>
+<script src="scriptNew.js"></script>
 </body>
 </html>

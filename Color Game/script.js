@@ -1,11 +1,25 @@
 var boxes = document.getElementsByClassName("box");
 var newColorButton = document.getElementById("newColor");
+var correctBox;
+var selectedDifficulty =7;
+var selectedBox;
 
 newColorButton.addEventListener("click",function(){
     colorGenerator();
-})
+});
 
 colorGenerator();
+
+for(var i=0; i < 7; i++){
+    boxes.item(i).addEventListener("click",function(){
+        if(i==selectedBox){
+            alert("correct");
+        }else{
+            alert("Wrong box");
+        }
+    });
+}
+
 
 function colorGenerator() {
     var randomR = Math.floor(Math.random() * 256);
@@ -15,9 +29,8 @@ function colorGenerator() {
     var rgbVal = document.getElementById("rgbValue");
     rgbVal.textContent = "RGB (" + randomR + ", " + randomG + ", " + randomB + ")";
 
-    var selectedDifficulty = 7;
-    var correctBox = boxes[i];
-    var selectedBox = Math.floor(Math.random() * selectedDifficulty);
+    selectedBox = Math.floor(Math.random() * selectedDifficulty);
+    correctBox = boxes[selectedBox];
     console.log("The selected box is: " + selectedBox);
 
     boxes[selectedBox].style.backgroundColor = "rgb(" + randomR + ", " + randomG + ", " + randomB + ")";
@@ -31,17 +44,8 @@ function colorGenerator() {
     }
 }
 
-for (var i = 0; i < selectedDifficulty; i++) {
-    boxes[i].addEventListener("click", function(){
-        // if(this === correctBox){
-        //     console.log("Correct");
-        // }else{
-        //     console.log("Selected " + i);
-        //     this.clasList.add("display-none");
-        // }
-        alert("clicked" + i);
-    })
-}
+
+
 
 
 

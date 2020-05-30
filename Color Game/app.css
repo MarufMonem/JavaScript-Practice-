@@ -4,14 +4,32 @@ body{
 #header{
     background-color: aquamarine;
 }
-#nav{
-    background-color: rgb(10, 108, 221);
+h1{
+    font-family: 'Chelsea Market', cursive;
+    font-size: 3.2rem;
 }
+h2{
+    font-size: 2em;
+    
+}
+#nav{
+    background-color: whitesmoke;
+}
+
 #boxes button{
-    border: 2px solid black;
     width: inherit;
-    height: 160px;
-    border-radius: 8px;
-    color: black;
-    background-color: lavenderblush;
+    height: 10rem;
+    border-radius: 10px;
+    background-color: transparent;
+    visibility: hidden;
+    
+}
+p{
+    font-size: 1.3rem;
+    font-weight: bold;
+ 
+
+}
+.easy{
+    width: 1.5rem;
 }
