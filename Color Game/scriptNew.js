@@ -14,7 +14,6 @@ var randomB;
 
 easy.addEventListener("click", function () {
     selectedDifficulty = 3;
-    // prompt.textContent = "Good Luck";
     easy.classList.toggle("active");
     hard.classList.toggle("active");
     colorGenerator(3);
@@ -22,7 +21,6 @@ easy.addEventListener("click", function () {
 
 hard.addEventListener("click", function () {
     selectedDifficulty = 6;
-    // prompt.textContent = "Good Luck";
     easy.classList.toggle("active");
     hard.classList.toggle("active");
     colorGenerator(7);
