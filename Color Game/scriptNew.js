@@ -14,7 +14,7 @@ var randomB;
 
 easy.addEventListener("click", function () {
     selectedDifficulty = 3;
-    prompt.textContent = "";
+    // prompt.textContent = "Good Luck";
     easy.classList.toggle("active");
     hard.classList.toggle("active");
     colorGenerator(3);
@@ -22,7 +22,7 @@ easy.addEventListener("click", function () {
 
 hard.addEventListener("click", function () {
     selectedDifficulty = 6;
-    prompt.textContent = "";
+    // prompt.textContent = "Good Luck";
     easy.classList.toggle("active");
     hard.classList.toggle("active");
     colorGenerator(7);
@@ -34,6 +34,7 @@ newColorButton.addEventListener("click", colorGenerator);
 function colorGenerator() {
     makeInvisible();
     makeVisible(selectedDifficulty, boxes);
+    prompt.textContent = "Good Luck";
     //Generating random colors
     randomR = Math.floor(Math.random() * 256);
     randomG = Math.floor(Math.random() * 256);

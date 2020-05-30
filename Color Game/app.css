@@ -7,6 +7,7 @@ body{
 h1{
     font-family: 'Chelsea Market', cursive;
     font-size: 3.2rem;
+    letter-spacing: 10px;
 }
 h2{
     font-size: 2em;
@@ -27,12 +28,28 @@ i{
     visibility: hidden;
     
 }
-p{
-    font-size: 1.3rem;
+#nav p{
+    font-family: 'Chelsea Market', cursive;
+    font-size: 1.4rem;
     font-weight: bold;
- 
+    /* color: whitesmoke; */
 
 }
 .easy{
     width: 1.5rem;
 }
+#bottomNavBar{
+    font-family: 'Chelsea Market', cursive;
+    color: whitesmoke;
+    margin-top: 10%;
+    
+}
+
+#bottomNavBar a{
+    color: whitesmoke;
+}
+#bottomNavBar a:hover{
+    color: aquamarine;
+    text-decoration: none;
+}
+
