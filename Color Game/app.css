@@ -52,4 +52,9 @@ i{
     color: aquamarine;
     text-decoration: none;
 }
+#score{
+    font-family: 'Chelsea Market', cursive;
+    color: whitesmoke;
+    visibility: hidden;
+}
 

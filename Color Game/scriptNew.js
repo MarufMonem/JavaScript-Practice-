@@ -9,9 +9,13 @@ var hard = document.getElementById("hard");
 var hardLevel = document.getElementById("hardLevel");
 var myScore = document.getElementById("myScore");
 var gamesPlayed = document.getElementById("gamesPlayed");
+var score = document.getElementById("score");
 var selectedDifficulty = 6;
-var totalGame=0;
-var totalPoints=0;
+var played=0;
+var totalGame = 0;
+var totalPoints = 0;
+var attempts=0;
+var alreadySelectedWinner = false;
 var randomR;
 var randomG;
 var randomB;
@@ -37,10 +41,13 @@ function colorGenerator() {
     makeInvisible();
     makeVisible(selectedDifficulty, boxes);
     prompt.textContent = "Good Luck";
+    // score.style.visibility = "visible";
+    alreadySelectedWinner = false;
+    played=played+1;
     //every new color generation increases the total game.
-    totalGame=totalGame+1;
+    totalGame = totalGame + selectedDifficulty;
     //attempts
-    var attempts=0;
+     attempts = 0;
     //Generating random colors
     randomR = Math.floor(Math.random() * 256);
     randomG = Math.floor(Math.random() * 256);
@@ -57,13 +64,17 @@ function colorGenerator() {
         boxes.item(i).addEventListener("click", function () {
             if (this.style.backgroundColor == boxes[selectedBox].style.backgroundColor) {
                 prompt.textContent = "Correct";
-                Win(selectedDifficulty);
+                Win(selectedDifficulty, attempts);
             }
             else {
                 prompt.textContent = "Try Again";
-                attempts=attempts+1;
+                
+                attempts = (attempts + 1);
+                console.log("Inside : " + attempts);
+                console.log("i value  : " + i);
                 this.classList.add("d-none");
             }
+            
         });
         //Assigning colors to the other boxes
         if (i != selectedBox) {
@@ -76,7 +87,17 @@ function colorGenerator() {
 }
 
 //Function to be called when correct box is selected
-function Win(selectedDifficulty) {
+function Win(selectedDifficulty, attempts) {
+
+
+    if (alreadySelectedWinner == false) {
+        //point generation
+        console.log("attempts: " + attempts + " selectedDifficulty " + selectedDifficulty);
+        totalPoints = totalPoints + (selectedDifficulty - attempts);
+        myScore.textContent = totalPoints;
+        gamesPlayed.textContent = totalGame;
+        alreadySelectedWinner = true;
+    }
     for (let j = 0; j < selectedDifficulty; j++) {
         //showing all the hidden boxes based on difficulty
         boxes[j].classList.remove("d-none");
