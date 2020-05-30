@@ -10,7 +10,10 @@ h1{
 }
 h2{
     font-size: 2em;
-    
+
+}
+i{
+    font-size: 1.8rem;
 }
 #nav{
     background-color: whitesmoke;

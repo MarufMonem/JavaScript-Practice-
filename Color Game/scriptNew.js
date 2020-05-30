@@ -15,12 +15,16 @@ var randomB;
 easy.addEventListener("click", function () {
     selectedDifficulty = 3;
     prompt.textContent = "";
+    easy.classList.toggle("active");
+    hard.classList.toggle("active");
     colorGenerator(3);
 });
 
 hard.addEventListener("click", function () {
     selectedDifficulty = 6;
     prompt.textContent = "";
+    easy.classList.toggle("active");
+    hard.classList.toggle("active");
     colorGenerator(7);
 });
 
