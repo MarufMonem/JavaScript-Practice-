@@ -10,11 +10,12 @@ var hardLevel = document.getElementById("hardLevel");
 var myScore = document.getElementById("myScore");
 var gamesPlayed = document.getElementById("gamesPlayed");
 var score = document.getElementById("score");
+var info = document.getElementById("info");
 var selectedDifficulty = 6;
-var played=0;
+var played = 0;
 var totalGame = 0;
 var totalPoints = 0;
-var attempts=0;
+var attempts = 0;
 var alreadySelectedWinner = false;
 var randomR;
 var randomG;
@@ -41,13 +42,14 @@ function colorGenerator() {
     makeInvisible();
     makeVisible(selectedDifficulty, boxes);
     prompt.textContent = "Good Luck";
+    info.style.visibility = "visible";
     // score.style.visibility = "visible";
     alreadySelectedWinner = false;
-    played=played+1;
+    played = played + 1;
     //every new color generation increases the total game.
     totalGame = totalGame + selectedDifficulty;
     //attempts
-     attempts = 0;
+    attempts = 0;
     //Generating random colors
     randomR = Math.floor(Math.random() * 256);
     randomG = Math.floor(Math.random() * 256);
@@ -68,13 +70,13 @@ function colorGenerator() {
             }
             else {
                 prompt.textContent = "Try Again";
-                
+
                 attempts = (attempts + 1);
                 console.log("Inside : " + attempts);
                 console.log("i value  : " + i);
                 this.classList.add("d-none");
             }
-            
+
         });
         //Assigning colors to the other boxes
         if (i != selectedBox) {
@@ -88,7 +90,7 @@ function colorGenerator() {
 
 //Function to be called when correct box is selected
 function Win(selectedDifficulty, attempts) {
-
+    info.style.visibility = "hidden";
 
     if (alreadySelectedWinner == false) {
         //point generation
