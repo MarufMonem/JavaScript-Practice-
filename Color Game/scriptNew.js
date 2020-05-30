@@ -7,7 +7,11 @@ var prompt = document.getElementById("msg");
 var easy = document.getElementById("easy");
 var hard = document.getElementById("hard");
 var hardLevel = document.getElementById("hardLevel");
+var myScore = document.getElementById("myScore");
+var gamesPlayed = document.getElementById("gamesPlayed");
 var selectedDifficulty = 6;
+var totalGame=0;
+var totalPoints=0;
 var randomR;
 var randomG;
 var randomB;
@@ -33,6 +37,10 @@ function colorGenerator() {
     makeInvisible();
     makeVisible(selectedDifficulty, boxes);
     prompt.textContent = "Good Luck";
+    //every new color generation increases the total game.
+    totalGame=totalGame+1;
+    //attempts
+    var attempts=0;
     //Generating random colors
     randomR = Math.floor(Math.random() * 256);
     randomG = Math.floor(Math.random() * 256);
@@ -53,6 +61,7 @@ function colorGenerator() {
             }
             else {
                 prompt.textContent = "Try Again";
+                attempts=attempts+1;
                 this.classList.add("d-none");
             }
         });
