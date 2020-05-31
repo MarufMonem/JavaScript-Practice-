@@ -21,10 +21,13 @@ $("input[type='text']").keypress(function(event){
         var userValue= $(this).val();
 
         //add the input value to the unordered list
-        $("ul").append("<li><span>X </span>" + userValue + "</li>");
+        $("ul").append("<li><span><i class='fas fa-trash-alt'></i></span> </span>" + userValue + "</li>");
 
         // Clear out the input space
         $(this).val("");
     }
 });
     
+$(".fa-pencil-alt").click(function(){
+    $("input[type='text']").fadeToggle(400);
+});
