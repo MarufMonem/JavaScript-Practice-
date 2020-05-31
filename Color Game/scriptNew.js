@@ -61,23 +61,35 @@ function colorGenerator() {
     // console.log("The selected box is: " + selectedBox);
     boxes[selectedBox].style.backgroundColor = "rgb(" + randomR + ", " + randomG + ", " + randomB + ")";
 
+
+    $("#boxes button").click(function(){
+        if (this.style.backgroundColor == boxes[selectedBox].style.backgroundColor) {
+            prompt.textContent = "Correct";
+            Win(selectedDifficulty, attempts);
+        }
+        else {
+            prompt.textContent = "Try Again";
+            $(this).fadeOut("slow");
+            
+        }
+        });
+
     for (let i = 0; i < selectedDifficulty; i++) {
         //Assigining click features
-        boxes.item(i).addEventListener("click", function () {
-            if (this.style.backgroundColor == boxes[selectedBox].style.backgroundColor) {
-                prompt.textContent = "Correct";
-                Win(selectedDifficulty, attempts);
-            }
-            else {
-                prompt.textContent = "Try Again";
+        // boxes.item(i).addEventListener("click", function () {
+        //     if (this.style.backgroundColor == boxes[selectedBox].style.backgroundColor) {
+        //         prompt.textContent = "Correct";
+        //         Win(selectedDifficulty, attempts);
+        //     }
+        //     else {
+        //         prompt.textContent = "Try Again";
+        //         attempts = (attempts + 1);
+        //         console.log("Inside : " + attempts);
+        //         console.log("i value  : " + i);
+        //         this.classList.add("d-none");
+        //     }
 
-                attempts = (attempts + 1);
-                console.log("Inside : " + attempts);
-                console.log("i value  : " + i);
-                this.classList.add("d-none");
-            }
-
-        });
+        // });
         //Assigning colors to the other boxes
         if (i != selectedBox) {
             var randomNewR = Math.floor(Math.random() * 256);
