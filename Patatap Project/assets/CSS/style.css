@@ -1,8 +1,22 @@
 canvas{
     width: 100%;
-    background-color: black;
+    background-color: #191a1c;
 }
 body{
     height: 100%;
     margin: 0;
+}
+#id{
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+h4{
+    padding-top: 10px;
+    margin: 0;
+    background-color: #191a1c;
+    color:whitesmoke;
+    text-align: center;
+    font-family: 'Architects Daughter', cursive;
+    font-size: 1.2rem;
 }
