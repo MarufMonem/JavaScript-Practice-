@@ -168,6 +168,13 @@ function onKeyDown(event) {
      for (var i = 0; i < circles.length; i++) {
          circles[i].fillColor.hue+=1;
          circles[i].scale(.9);
+         console.log(circles.length);
+         if(circles[i].area <1){
+            //  removing from the canvas
+             circles[i].remove();
+            //  Removing from the array
+             circles.splice(i,1);
+         }
      }
  }
         </script>
@@ -175,6 +182,7 @@ function onKeyDown(event) {
 
 <body>
     <canvas id="myCanvas" resize></canvas>
+    
 </body>
 
 </html>
