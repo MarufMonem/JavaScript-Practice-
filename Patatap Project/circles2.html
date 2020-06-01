@@ -22,17 +22,27 @@
     <!-- Canvas for paper Js -->
     <script type="text/paperscript" canvas="myCanvas">
 
-//Removing the head when a key is pressed
+
+
 var head = document.getElementById("header");
+var keyData={};
 document.addEventListener("keypress",function(){
     head.style.display="none";
 })
 
-var keyData = {
+var btn = document.getElementById("loopOn");
+var btn1 = document.getElementById("loopOff");
+
+    btn.addEventListener("click",function(){
+        console.log("clicked");
+         keyData = {
     a: {
         sound: new Howl({
-            src: ['assets/Sound/sounds/bubbles.mp3']
-                    })
+            src: ['assets/Sound/sounds/bubbles.mp3'],
+            rate:2,
+            loop:true
+            
+        })
     },
     b: {
         sound: new Howl({
@@ -160,6 +170,147 @@ var keyData = {
         })
     }
 };
+    });
+
+    btn1.addEventListener("click",function(){
+        console.log("clicked");
+         keyData = {
+    a: {
+        sound: new Howl({
+            src: ['assets/Sound/sounds/bubbles.mp3'],
+            rate:2,
+            loop:false
+            
+        })
+    },
+    b: {
+        sound: new Howl({
+            src: ['assets/Sound/sounds/clay.mp3']
+        })
+    },
+    c: {
+        sound: new Howl({
+            src: ['assets/Sound/sounds/confetti.mp3']
+        })
+    },
+    d: {
+        sound: new Howl({
+            src: ['assets/Sound/sounds/corona.mp3']
+        })
+    },
+    e: {
+        sound: new Howl({
+            src: ['assets/Sound/sounds/dotted-spiral.mp3']
+        })
+    },
+    f: {
+        sound: new Howl({
+            src: ['assets/Sound/sounds/flash-1.mp3']
+        })
+    },
+    g: {
+        sound: new Howl({
+            src: ['assets/Sound/sounds/flash-2.mp3']
+        })
+    },
+    h: {
+        sound: new Howl({
+            src: ['assets/Sound/sounds/flash-3.mp3']
+        })
+    },
+    i: {
+        sound: new Howl({
+            src: ['assets/Sound/sounds/glimmer.mp3']
+        })
+    },
+    j: {
+        sound: new Howl({
+            src: ['assets/Sound/sounds/moon.mp3']
+        })
+    },
+    k: {
+        sound: new Howl({
+            src: ['assets/Sound/sounds/pinwheel.mp3']
+        })
+    },
+    l: {
+        sound: new Howl({
+            src: ['assets/Sound/sounds/piston-1.mp3']
+        })
+    },
+    m: {
+        sound: new Howl({
+            src: ['assets/Sound/sounds/piston-2.mp3']
+        })
+    },
+    n: {
+        sound: new Howl({
+            src: ['assets/Sound/sounds/piston-3.mp3']
+        })
+    },
+    o: {
+        sound: new Howl({
+            src: ['assets/Sound/sounds/prism-1.mp3']
+        })
+    },
+    p: {
+        sound: new Howl({
+            src: ['assets/Sound/sounds/prism-2.mp3']
+        })
+    },
+    q: {
+        sound: new Howl({
+            src: ['assets/Sound/sounds/prism-3.mp3']
+        })
+    },
+    r: {
+        sound: new Howl({
+            src: ['assets/Sound/sounds/splits.mp3']
+        })
+    },
+    s: {
+        sound: new Howl({
+            src: ['assets/Sound/sounds/squiggle.mp3']
+        })
+    },
+    t: {
+        sound: new Howl({
+            src: ['assets/Sound/sounds/strike.mp3']
+        })
+    },
+    u: {
+        sound: new Howl({
+            src: ['assets/Sound/sounds/suspension.mp3']
+        })
+    },
+    v: {
+        sound: new Howl({
+            src: ['assets/Sound/sounds/timer.mp3']
+        })
+    },
+    w: {
+        sound: new Howl({
+            src: ['assets/Sound/sounds/ufo.mp3']
+        })
+    },
+    x: {
+        sound: new Howl({
+            src: ['assets/Sound/sounds/veil.mp3']
+        })
+    },
+    y: {
+        sound: new Howl({
+            src: ['assets/Sound/sounds/wipe.mp3']
+        })
+    },
+    z: {
+        sound: new Howl({
+            src: ['assets/Sound/sounds/zig-zag.mp3']
+        })
+    }
+};
+    });
+
 
 var circles=[];
 function onKeyDown(event) {
@@ -167,6 +318,16 @@ function onKeyDown(event) {
     // When a key is pressed, set the content of the text item:
     var myCircle = new Path.Circle(new Point(Math.floor(Math.random() * view.size.width), Math.floor(Math.random() * view.size.height)), 400);
     myCircle.fillColor = "rgb(" + Math.floor(Math.random() * 256) + ", " + Math.floor(Math.random() * 256) + ", " + Math.floor(Math.random() * 256) + ")";
+    
+    console.log("The value of l is: " + );
+    keyData[event.key].sound["loop"]=true;
+    console.log("Whats inside sound " + keyData[event.key].sound.src);
+    // new Howl({
+    //         src: ['assets/Sound/sounds/bubbles.mp3'],
+    //         rate:2
+            
+    //     })
+    
     keyData[event.key].sound.play();
     circles.push(myCircle);
     }
@@ -191,9 +352,11 @@ function onKeyDown(event) {
 <body>
     <div id="header">
         <h4>Press any alphabet key on your keyboard and see the magic</h4>
+        <button id="loopOn">loop ON</button>
+        <button id="loopOff">loop OFF</button>
     </div>
     <canvas id="myCanvas" resize></canvas>
-
+    
 </body>
 
 </html>
