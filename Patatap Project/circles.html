@@ -11,12 +11,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title></title>
     <script type="text/Javascript" src="assets/JS/paper-full.js"></script>
+    <script type="text/Javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.core.min.js"></script>
+
     <link rel="stylesheet" href="assets/CSS/style.css">
 
     <script type="text/paperscript" canvas="myCanvas">
 
+var sound = new Howl({
+  src: ['assets/Sound/sounds/bubbles.mp3']
+});
+
+
+
 var circles=[]
 function onKeyDown(event) {
+    sound.play();
 	// When a key is pressed, set the content of the text item:
     var myCircle = new Path.Circle(new Point(Math.floor(Math.random() * view.size.width), Math.floor(Math.random() * view.size.height)), 400);
             myCircle.fillColor = 'orange';
