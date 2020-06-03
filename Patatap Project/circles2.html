@@ -22,294 +22,225 @@
     <!-- Canvas for paper Js -->
     <script type="text/paperscript" canvas="myCanvas">
 
-
-
 var head = document.getElementById("header");
-var keyData={};
-document.addEventListener("keypress",function(){
-    head.style.display="none";
-})
-
 var btn = document.getElementById("loopOn");
 var btn1 = document.getElementById("loopOff");
 
-    btn.addEventListener("click",function(){
-        console.log("clicked");
-         keyData = {
-    a: {
-        sound: new Howl({
-            src: ['assets/Sound/sounds/bubbles.mp3'],
-            rate:2,
-            loop:true
-            
-        })
-    },
-    b: {
-        sound: new Howl({
-            src: ['assets/Sound/sounds/clay.mp3']
-        })
-    },
-    c: {
-        sound: new Howl({
-            src: ['assets/Sound/sounds/confetti.mp3']
-        })
-    },
-    d: {
-        sound: new Howl({
-            src: ['assets/Sound/sounds/corona.mp3']
-        })
-    },
-    e: {
-        sound: new Howl({
-            src: ['assets/Sound/sounds/dotted-spiral.mp3']
-        })
-    },
-    f: {
-        sound: new Howl({
-            src: ['assets/Sound/sounds/flash-1.mp3']
-        })
-    },
-    g: {
-        sound: new Howl({
-            src: ['assets/Sound/sounds/flash-2.mp3']
-        })
-    },
-    h: {
-        sound: new Howl({
-            src: ['assets/Sound/sounds/flash-3.mp3']
-        })
-    },
-    i: {
-        sound: new Howl({
-            src: ['assets/Sound/sounds/glimmer.mp3']
-        })
-    },
-    j: {
-        sound: new Howl({
-            src: ['assets/Sound/sounds/moon.mp3']
-        })
-    },
-    k: {
-        sound: new Howl({
-            src: ['assets/Sound/sounds/pinwheel.mp3']
-        })
-    },
-    l: {
-        sound: new Howl({
-            src: ['assets/Sound/sounds/piston-1.mp3']
-        })
-    },
-    m: {
-        sound: new Howl({
-            src: ['assets/Sound/sounds/piston-2.mp3']
-        })
-    },
-    n: {
-        sound: new Howl({
-            src: ['assets/Sound/sounds/piston-3.mp3']
-        })
-    },
-    o: {
-        sound: new Howl({
-            src: ['assets/Sound/sounds/prism-1.mp3']
-        })
-    },
-    p: {
-        sound: new Howl({
-            src: ['assets/Sound/sounds/prism-2.mp3']
-        })
-    },
-    q: {
-        sound: new Howl({
-            src: ['assets/Sound/sounds/prism-3.mp3']
-        })
-    },
-    r: {
-        sound: new Howl({
-            src: ['assets/Sound/sounds/splits.mp3']
-        })
-    },
-    s: {
-        sound: new Howl({
-            src: ['assets/Sound/sounds/squiggle.mp3']
-        })
-    },
-    t: {
-        sound: new Howl({
-            src: ['assets/Sound/sounds/strike.mp3']
-        })
-    },
-    u: {
-        sound: new Howl({
-            src: ['assets/Sound/sounds/suspension.mp3']
-        })
-    },
-    v: {
-        sound: new Howl({
-            src: ['assets/Sound/sounds/timer.mp3']
-        })
-    },
-    w: {
-        sound: new Howl({
-            src: ['assets/Sound/sounds/ufo.mp3']
-        })
-    },
-    x: {
-        sound: new Howl({
-            src: ['assets/Sound/sounds/veil.mp3']
-        })
-    },
-    y: {
-        sound: new Howl({
-            src: ['assets/Sound/sounds/wipe.mp3']
-        })
-    },
-    z: {
-        sound: new Howl({
-            src: ['assets/Sound/sounds/zig-zag.mp3']
-        })
-    }
-};
-    });
+var loopVal=false;
+var keyData={};
 
-    btn1.addEventListener("click",function(){
+document.addEventListener("keypress",function(){
+    head.style.display="none";
+});
+
+btn1.addEventListener("mouseover",function(){
+    btn1.classList.add("buttonHover");
+});
+btn1.addEventListener("mouseout",function(){
+    btn1.classList.remove("buttonHover");
+});
+btn.addEventListener("mouseover",function(){
+    btn.classList.add("buttonHover");
+});
+btn.addEventListener("mouseout",function(){
+    btn.classList.remove("buttonHover");
+});
+
+
+btn1.addEventListener("click",function(){
+    location.reload();
+});
+
+    btn.addEventListener("click",function(){
+        btn.classList.add("buttonClicked");
         console.log("clicked");
-         keyData = {
+        loopVal=true;
+    keyData = {
     a: {
         sound: new Howl({
             src: ['assets/Sound/sounds/bubbles.mp3'],
             rate:2,
-            loop:false
+            loop:loopVal
             
         })
     },
     b: {
         sound: new Howl({
-            src: ['assets/Sound/sounds/clay.mp3']
+            src: ['assets/Sound/sounds/clay.mp3'],
+            rate:2,
+            loop:loopVal
         })
     },
     c: {
         sound: new Howl({
-            src: ['assets/Sound/sounds/confetti.mp3']
+            src: ['assets/Sound/sounds/confetti.mp3'],
+            rate:2,
+            loop:loopVal
         })
     },
     d: {
         sound: new Howl({
-            src: ['assets/Sound/sounds/corona.mp3']
+            src: ['assets/Sound/sounds/corona.mp3'],
+            rate:2,
+            loop:loopVal
         })
     },
     e: {
         sound: new Howl({
-            src: ['assets/Sound/sounds/dotted-spiral.mp3']
+            src: ['assets/Sound/sounds/dotted-spiral.mp3'],
+            rate:2,
+            loop:loopVal
         })
     },
     f: {
         sound: new Howl({
-            src: ['assets/Sound/sounds/flash-1.mp3']
+            src: ['assets/Sound/sounds/flash-1.mp3'],
+            rate:2,
+            loop:loopVal
         })
     },
     g: {
         sound: new Howl({
-            src: ['assets/Sound/sounds/flash-2.mp3']
+            src: ['assets/Sound/sounds/flash-2.mp3'],
+            rate:2,
+            loop:loopVal
         })
     },
     h: {
         sound: new Howl({
-            src: ['assets/Sound/sounds/flash-3.mp3']
+            src: ['assets/Sound/sounds/flash-3.mp3'],
+            rate:2,
+            loop:loopVal
         })
     },
     i: {
         sound: new Howl({
-            src: ['assets/Sound/sounds/glimmer.mp3']
+            src: ['assets/Sound/sounds/glimmer.mp3'],
+            rate:2,
+            loop:loopVal
         })
     },
     j: {
         sound: new Howl({
-            src: ['assets/Sound/sounds/moon.mp3']
+            src: ['assets/Sound/sounds/moon.mp3'],
+            rate:2,
+            loop:loopVal
         })
     },
     k: {
         sound: new Howl({
-            src: ['assets/Sound/sounds/pinwheel.mp3']
+            src: ['assets/Sound/sounds/pinwheel.mp3'],
+            rate:2,
+            loop:loopVal
         })
     },
     l: {
         sound: new Howl({
-            src: ['assets/Sound/sounds/piston-1.mp3']
+            src: ['assets/Sound/sounds/piston-1.mp3'],
+            rate:2,
+            loop:loopVal
         })
     },
     m: {
         sound: new Howl({
-            src: ['assets/Sound/sounds/piston-2.mp3']
+            src: ['assets/Sound/sounds/piston-2.mp3'],
+            rate:2,
+            loop:loopVal
         })
     },
     n: {
         sound: new Howl({
-            src: ['assets/Sound/sounds/piston-3.mp3']
+            src: ['assets/Sound/sounds/piston-3.mp3'],
+            rate:2,
+            loop:loopVal
         })
     },
     o: {
         sound: new Howl({
-            src: ['assets/Sound/sounds/prism-1.mp3']
+            src: ['assets/Sound/sounds/prism-1.mp3'],
+            rate:2,
+            loop:loopVal
         })
     },
     p: {
         sound: new Howl({
-            src: ['assets/Sound/sounds/prism-2.mp3']
+            src: ['assets/Sound/sounds/prism-2.mp3'],
+            rate:2,
+            loop:loopVal
         })
     },
     q: {
         sound: new Howl({
-            src: ['assets/Sound/sounds/prism-3.mp3']
+            src: ['assets/Sound/sounds/prism-3.mp3'],
+            rate:2,
+            loop:loopVal
         })
     },
     r: {
         sound: new Howl({
-            src: ['assets/Sound/sounds/splits.mp3']
+            src: ['assets/Sound/sounds/splits.mp3'],
+            rate:2,
+            loop:loopVal
         })
     },
     s: {
         sound: new Howl({
-            src: ['assets/Sound/sounds/squiggle.mp3']
+            src: ['assets/Sound/sounds/squiggle.mp3'],
+            rate:2,
+            loop:loopVal
         })
     },
     t: {
         sound: new Howl({
-            src: ['assets/Sound/sounds/strike.mp3']
+            src: ['assets/Sound/sounds/strike.mp3'],
+            rate:2,
+            loop:loopVal
         })
     },
     u: {
         sound: new Howl({
-            src: ['assets/Sound/sounds/suspension.mp3']
+            src: ['assets/Sound/sounds/suspension.mp3'],
+            rate:2,
+            loop:loopVal
         })
     },
     v: {
         sound: new Howl({
-            src: ['assets/Sound/sounds/timer.mp3']
+            src: ['assets/Sound/sounds/timer.mp3'],
+            rate:2,
+            loop:loopVal
         })
     },
     w: {
         sound: new Howl({
-            src: ['assets/Sound/sounds/ufo.mp3']
+            src: ['assets/Sound/sounds/ufo.mp3'],
+            rate:2,
+            loop:loopVal
         })
     },
     x: {
         sound: new Howl({
-            src: ['assets/Sound/sounds/veil.mp3']
+            src: ['assets/Sound/sounds/veil.mp3'],
+            rate:2,
+            loop:loopVal
         })
     },
     y: {
         sound: new Howl({
-            src: ['assets/Sound/sounds/wipe.mp3']
+            src: ['assets/Sound/sounds/wipe.mp3'],
+            rate:2,
+            loop:loopVal
         })
     },
     z: {
         sound: new Howl({
-            src: ['assets/Sound/sounds/zig-zag.mp3']
+            src: ['assets/Sound/sounds/zig-zag.mp3'],
+            rate:2,
+            loop:loopVal
         })
-    }
-};
-    });
+        }
+    };
+});
 
 
 var circles=[];
@@ -318,16 +249,7 @@ function onKeyDown(event) {
     // When a key is pressed, set the content of the text item:
     var myCircle = new Path.Circle(new Point(Math.floor(Math.random() * view.size.width), Math.floor(Math.random() * view.size.height)), 400);
     myCircle.fillColor = "rgb(" + Math.floor(Math.random() * 256) + ", " + Math.floor(Math.random() * 256) + ", " + Math.floor(Math.random() * 256) + ")";
-    
-    console.log("The value of l is: " + );
-    keyData[event.key].sound["loop"]=true;
-    console.log("Whats inside sound " + keyData[event.key].sound.src);
-    // new Howl({
-    //         src: ['assets/Sound/sounds/bubbles.mp3'],
-    //         rate:2
-            
-    //     })
-    
+    console.log("loop contains " + keyData[event.key].sound.loop);
     keyData[event.key].sound.play();
     circles.push(myCircle);
     }
@@ -351,12 +273,12 @@ function onKeyDown(event) {
 
 <body>
     <div id="header">
-        <h4>Press any alphabet key on your keyboard and see the magic</h4>
-        <button id="loopOn">loop ON</button>
-        <button id="loopOff">loop OFF</button>
+        <h4>Choose loop on or off then press any alphabet key on your keyboard and see the magic</h4>
     </div>
+    <button id="loopOn">Loop ON</button>
+    <button id="loopOff">Loop OFF</button>
     <canvas id="myCanvas" resize></canvas>
-    
+
 </body>
 
 </html>

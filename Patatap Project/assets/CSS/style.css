@@ -20,3 +20,21 @@ h4{
     font-family: 'Architects Daughter', cursive;
     font-size: 1.2rem;
 }
+button{
+    width: 50%;
+    float: left;
+    padding: 5px 0px;
+    background-color: #191a1c;
+    color: whitesmoke;
+    border: none;
+    
+}
+#loopOn{
+    border-right: 1px solid white;
+}
+.buttonHover{
+    background-color: aquamarine;
+}
+.buttonClicked{
+    background-color: cornflowerblue;
+}
